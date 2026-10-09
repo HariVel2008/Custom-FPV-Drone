@@ -37,8 +37,7 @@ Making a custom FPV Drone.
 
 <img width="540" height="345" alt="image" src="https://github.com/user-attachments/assets/081d1f62-ca97-4a6d-908d-78f6bc6de6d9" />
 
-DShot (Digital Shot) - a communication protocol between the STM32 and the ESC
+DShot (Digital Shot) - a communication protocol between the STM32 and the ESC \
+EEPROM - small capacity non-volatile memory. Store parameters so that when the system is restarted you don't have to reprogram it. \
+FLASH - large capacity non-volatile memory. Used for a lot of data collection. \
 
-EEPROM - small capacity non-volatile memory. Store parameters so that when the system is restarted you don't have to reprogram it.
-
-FLASH - large capacity non-volatile memory. Used for a lot of data collection.
