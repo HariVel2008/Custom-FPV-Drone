@@ -34,4 +34,6 @@ Making a custom FPV Drone.
 1. We need sensors such as IMU, magnetometer, barometer
 2. We need a lot of IOs with various expansion capabilites
 4. We will need a way to attach Raspberry Pi to the board later on for computer vision capabilites
-5. 
+
+<img width="540" height="345" alt="image" src="https://github.com/user-attachments/assets/081d1f62-ca97-4a6d-908d-78f6bc6de6d9" />
+
