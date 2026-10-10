@@ -31,9 +31,9 @@ Making a custom FPV Drone.
 1. each connection will have an R and T for each UART. It will also be connected to power and ground
 
 ## ESC Design Specifications
-1. We need sensors such as IMU, magnetometer, barometer
-2. We need a lot of IOs with various expansion capabilites
-4. We will need a way to attach Raspberry Pi to the board later on for computer vision capabilites
+1. I need sensors such as IMU, magnetometer, barometer
+2. I need a lot of IOs with various expansion capabilites
+4. I will need a way to attach Raspberry Pi to the board later on for computer vision capabilites
 
 <img width="540" height="345" alt="image" src="https://github.com/user-attachments/assets/081d1f62-ca97-4a6d-908d-78f6bc6de6d9" />
 
