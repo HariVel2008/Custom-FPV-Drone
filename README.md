@@ -57,6 +57,29 @@ Programming & Debugging Connection: (SWD, DFU via USB, UART-to-USB)
 1. Base everything off of the high level design previously derived
 2. Choose a microcontroller
    - Factors: FPU, IOs, speed, price
-   - 
+3. Pick Suitable sensors
+4. Pick peripherals and connectors
+5. Power Distribution
 
+### After Making A Schematic
+Pick your parts
+-   Size of board
+-   Component sizes
+-   IC Packaging (Avoid BGA)
+-   Connectors
+
+### Laying Out PCB
+Things To Consider:
+1. Number of layers and ordering (e.g SIG,PWR,GND,SIG)
+  - SIG: Top signal layer. Where components and traces are drawn.
+  - PWR: A electric layer that provides power everywhere.
+  - GND: A negative terminal. Acts as a ground everywhere
+  - SIG: Bottom signal layer to where components and traces are drawn
+3. PCB edge, mounting holes and connectors
+- Mounting holes are the holes to mount the pcb to the drone
+4. Divide into sections (power, RF, analog, digital)
+5. Special considerations: impedance, oscillators
+6. (Rough) Component placement of ICs (ideally on one side)
+7. Place passives and smaller components (decoupling capacitors first)
+  - Components that do not need any power or data to work: resistors, capacitors, inductors
   
