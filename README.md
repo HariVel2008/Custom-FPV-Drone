@@ -30,13 +30,14 @@ Making a custom FPV Drone.
 ## UARTS - a spot to connect an electrical component
 1. each connection will have an R and T for each UART. It will also be connected to power and ground
 
-## ESC Design Specifications
+## Flight Controller Design Specifications
 1. I need sensors such as IMU, magnetometer, barometer
 2. I need a lot of IOs with various expansion capabilites
 4. I will need a way to attach Raspberry Pi to the board later on for computer vision capabilites
 
 <img width="540" height="345" alt="image" src="https://github.com/user-attachments/assets/081d1f62-ca97-4a6d-908d-78f6bc6de6d9" />
 
+### High Level Design
 DShot (Digital Shot) - a communication protocol between the STM32 and the ESC \
 EEPROM - small capacity non-volatile memory. Store parameters so that when the system is restarted you don't have to reprogram it. \
 FLASH - large capacity non-volatile memory. Used for a lot of data collection. \
@@ -51,5 +52,11 @@ Programming & Debugging Connection: (SWD, DFU via USB, UART-to-USB)
 - SWD (Serial Wire Debug) - It is built into the ARM Cortex to have built in hardware debugging interface called SWD. You connect your laptop to an ST-Link (physical hardware programmer) and attach the other end to the computer's USB port (power, ground, SWDIO (Data), SWCLK(Clock)). I got route these into exposed copper pads so we can soldier wires into them.
 - DFU via USB (Device Firmware Upgrade) - DFU mode will allow me to flash pre-compiled firmware directly into the chip. I need to route the STM32's USB Data PLus(D+) and USB Data Minus(D-) pins directly to a USB-C connector on the KiCad schematic. We also need a push botton on the board to put the drone into DFU mode.
 - UART-to-USB (Virtual COM Port) - USB to UART communication "translator". I will use this to configuire expressLRS, test motors and related stuff on a linux machine.
+
+### Steps To Make a Schematic
+1. Base everything off of the high level design previously derived
+2. Choose a microcontroller
+   - Factors: FPU, IOs, speed, price
+   - 
 
   
