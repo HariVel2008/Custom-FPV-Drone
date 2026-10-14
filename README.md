@@ -52,6 +52,9 @@ Programming & Debugging Connection: (SWD, DFU via USB, UART-to-USB)
 - SWD (Serial Wire Debug) - It is built into the ARM Cortex to have built in hardware debugging interface called SWD. You connect your laptop to an ST-Link (physical hardware programmer) and attach the other end to the computer's USB port (power, ground, SWDIO (Data), SWCLK(Clock)). I got route these into exposed copper pads so we can soldier wires into them.
 - DFU via USB (Device Firmware Upgrade) - DFU mode will allow me to flash pre-compiled firmware directly into the chip. I need to route the STM32's USB Data PLus(D+) and USB Data Minus(D-) pins directly to a USB-C connector on the KiCad schematic. We also need a push botton on the board to put the drone into DFU mode.
 - UART-to-USB (Virtual COM Port) - USB to UART communication "translator". I will use this to configuire expressLRS, test motors and related stuff on a linux machine.
+- I2C bus to solder pads to later connect magenometers
+- Keep a bunch of exposed UARTs for later expansion
+- 
 
 ### Steps To Make a Schematic
 1. Base everything off of the high level design previously derived
