@@ -82,4 +82,29 @@ Things To Consider:
 6. (Rough) Component placement of ICs (ideally on one side)
 7. Place passives and smaller components (decoupling capacitors first)
   - Components that do not need any power or data to work: resistors, capacitors, inductors
+
+### Routing The PCB
+1. Check PCB manufacturer capabalities (min track width, min via size, track to track displacement)
+2. Wider tracks for higher currents. Avoid thin traces where possible
+3. Route important signal first (e.g. crystal, RF, USB)
+4. RF: Use PCB manufacturer stackup specs and online impedance calculator.
+5. Route smaller power and ground traces last. Use vias to connect PWR/GND planes.
+6. Finally: copper pours and stitching vias
+
+### Production
+1. Design rule checks (schematic and layout)
+2. Print out schematic and check by hand. Reference datasheets.
+3. Generate Gerbers. Check with Gerber viewer.
+4. Upload to manufacturer's site, fill in settings and order.
+5. Need BOM and centroid as well as other files
+
+### Testing
+1. Check components placement and see if there are shorts
+2. Attach power supply and slowly ramp up voltage to operating voltage. Large current means likely a short.
+- Check voltage and current.
+- check other voltage
+b. check oscillators, sensors, LDOs etc.
+4. Write drivers for sesnors, peripheral, etc.
+5. Note down errors but DO NOT change original design files. Keep them for reference.
+
   
