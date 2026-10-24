@@ -54,7 +54,7 @@ Programming & Debugging Connection: (SWD, DFU via USB, UART-to-USB)
 - UART-to-USB (Virtual COM Port) - USB to UART communication "translator". I will use this to configuire expressLRS, test motors and related stuff on a linux machine.
 - I2C bus to solder pads to later connect magenometers
 - Keep a bunch of exposed UARTs for later expansion
-- 
+
 
 ### Steps To Make a Schematic
 1. Base everything off of the high level design previously derived
