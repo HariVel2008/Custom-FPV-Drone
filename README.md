@@ -9,24 +9,6 @@ Making a custom FPV Drone.
 8. The Receiver - Designed on KiCAD based on ExpressLRS (ELRS)
 9. FPV Camera - Analog: Undecided
 
-## Analog & Circuit Simulation Tools:
-1. NgSPICE (embedded into KiCAD) - generates precise graphs using manufacturer data to model the circuit behavior.
-2. ReNode - Open source simulation software that can simulate the STM32. Can also simulate external sensors and communication protocols such as I2C or SPI.
-3. KiCAD built in ERC (Electrical Rules Checker) and DRC (Design Rules Checker)
-
-## FPV Drone Parts Explained - https://www.youtube.com/watch?v=ndUVyEo2URM
-1. Controller (Transmitter or Radio) - send a signal to the drone which is received by the receiver. Signal has an antenna. 
-2. Flight Controller - the receiver sends the information to the flight controller.
-3. Usually under the flight controller is the ESC (Electronic Speed Controller). Each motor gets its own ESC which is built into 1 board.
-4. Camera captures a video which transfers the information down to the flight controller. Flight controller has an on screen chip which will interpret and signal goes to the video transmitter to transmit the video.
-5. The power source for drones are usually LiPo batteries. Lithium Polymer batteries. Battiers are most likely connected with (big)XT60 or (small)XT30 for discharging or BT2.0 (smallest). You got to use a balance charge to charge the LiPo Battery.
-
-## FPV Component Compatability
-1. Radio protocol - ExpressLRS (ELRS).
-2. Frequency - 2.4 gigahertz
-3. Receiver also has to be ELRS and 2.4 gigahertz
-4. Analog and digital are the two types of protocols. We are going to use analog with 5.8 gigahertz
-
 ## UARTS - a spot to connect an electrical component
 1. each connection will have an R and T for each UART. It will also be connected to power and ground
 
@@ -55,59 +37,5 @@ Programming & Debugging Connection: (SWD, DFU via USB, UART-to-USB)
 - I2C bus to solder pads to later connect magenometers
 - Keep a bunch of exposed UARTs for later expansion
 
-
-### Steps To Make a Schematic
-1. Base everything off of the high level design previously derived
-2. Choose a microcontroller
-   - Factors: FPU, IOs, speed, price
-3. Pick Suitable sensors
-4. Pick peripherals and connectors
-5. Power Distribution
-
-### After Making A Schematic
-Pick your parts
--   Size of board
--   Component sizes
--   IC Packaging (Avoid BGA)
--   Connectors
-
-### Laying Out PCB
-Things To Consider:
-1. Number of layers and ordering (e.g SIG,PWR,GND,SIG)
-  - SIG: Top signal layer. Where components and traces are drawn.
-  - PWR: A electric layer that provides power everywhere.
-  - GND: A negative terminal. Acts as a ground everywhere
-  - SIG: Bottom signal layer to where components and traces are drawn
-3. PCB edge, mounting holes and connectors
-- Mounting holes are the holes to mount the pcb to the drone
-4. Divide into sections (power, RF, analog, digital)
-5. Special considerations: impedance, oscillators
-6. (Rough) Component placement of ICs (ideally on one side)
-7. Place passives and smaller components (decoupling capacitors first)
-  - Components that do not need any power or data to work: resistors, capacitors, inductors
-
-### Routing The PCB
-1. Check PCB manufacturer capabalities (min track width, min via size, track to track displacement)
-2. Wider tracks for higher currents. Avoid thin traces where possible
-3. Route important signal first (e.g. crystal, RF, USB)
-4. RF: Use PCB manufacturer stackup specs and online impedance calculator.
-5. Route smaller power and ground traces last. Use vias to connect PWR/GND planes.
-6. Finally: copper pours and stitching vias
-
-### Production
-1. Design rule checks (schematic and layout)
-2. Print out schematic and check by hand. Reference datasheets.
-3. Generate Gerbers. Check with Gerber viewer.
-4. Upload to manufacturer's site, fill in settings and order.
-5. Need BOM and centroid as well as other files
-
-### Testing
-1. Check components placement and see if there are shorts
-2. Attach power supply and slowly ramp up voltage to operating voltage. Large current means likely a short.
-- Check voltage and current.
-- check other voltage
-b. check oscillators, sensors, LDOs etc.
-4. Write drivers for sesnors, peripheral, etc.
-5. Note down errors but DO NOT change original design files. Keep them for reference.
 
   
