@@ -6,8 +6,8 @@
 	(paper "A4")
 	(lib_symbols)
 	(sheet
-		(at 146.05 63.5)
-		(size 12.7 3.81)
+		(at 93.98 16.51)
+		(size 64.77 46.99)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -22,7 +22,7 @@
 		)
 		(uuid "7825bbe1-77c1-474f-b900-07a7f7e11026")
 		(property "Sheetname" "Microcontroller"
-			(at 146.05 62.7884 0)
+			(at 93.98 15.7984 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -33,7 +33,7 @@
 			)
 		)
 		(property "Sheetfile" "microcontroller.kicad_sch"
-			(at 146.05 67.8946 0)
+			(at 93.98 64.0846 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
